@@ -1,4 +1,5 @@
 package com.appland.quiz.models;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,14 +12,14 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @ToString
-public class Topic {
+public class Tag {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long topicId;
+	private long tagId;
 	private String name;
 }
