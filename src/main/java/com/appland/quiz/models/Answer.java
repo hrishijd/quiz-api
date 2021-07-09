@@ -19,5 +19,4 @@ public class Answer {
 	private long answerId;
 	private String text;
 	private long questionId;
-
 }

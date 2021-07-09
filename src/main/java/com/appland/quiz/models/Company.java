@@ -22,4 +22,5 @@ public class Company {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long companyId;
 	private String name;
+	private long questionId;
 }

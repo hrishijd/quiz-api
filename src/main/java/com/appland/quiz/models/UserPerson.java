@@ -6,21 +6,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+
 @Entity
-@AllArgsConstructor
+@Data
 @NoArgsConstructor
-@Getter
-@Setter
-@ToString
-public class SubTopic {
+@AllArgsConstructor
+public class UserPerson {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long subTopicId;
-	private String Name;
-	private long topicId;
+	private long userId;
+	private String name;
+	private String email;
 	private long questionId;
 }

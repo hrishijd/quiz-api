@@ -1,8 +1,5 @@
 package com.appland.quiz.models;
 
-import java.util.List;
-
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,9 +19,4 @@ public class Question {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long questionId;
 	private String text;
-	@ElementCollection(targetClass = Long.class)
-	private List<Long> subTopicId;
-	@ElementCollection(targetClass = Long.class)
-	private List<Long> tagId;
-	
 }

@@ -22,4 +22,5 @@ public class Tag {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long tagId;
 	private String name;
+	private long questionId;
 }
