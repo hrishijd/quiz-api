@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.appland.quiz.models.Topic;
 
 @Repository
-public interface TopicRepo extends JpaRepository<Topic, Long>{
+public interface TopicRepo extends JpaRepository<Topic,Long>{
 	
 }
