@@ -18,7 +18,7 @@ import com.appland.quiz.repositories.SubTopicRepo;
 import com.appland.quiz.repositories.TagRepo;
 import com.appland.quiz.repositories.TopicRepo;
 
-@RestController("/")
+@RestController
 public class CrudController {
 	@Autowired
 	private CompanyRepo companyRepo;
@@ -28,7 +28,7 @@ public class CrudController {
 	private SubTopicRepo subTopicRepo;
 	@Autowired
 	private TagRepo tagRepo;
-	@RequestMapping(method = RequestMethod.POST,value = "company/new")
+	@RequestMapping(method = RequestMethod.POST,value = "/company/new")
 	public long saveCompany(@RequestBody com.appland.quiz.models.Company company) 
 	{
 		System.out.println(company.toString());
@@ -36,7 +36,7 @@ public class CrudController {
 		System.out.println("Hrishi here");
 		return company.getCompanyId();
 	}
-	@RequestMapping(method = RequestMethod.POST,value = "topic/new")
+	@RequestMapping(method = RequestMethod.POST,value = "/topic/new")
 	public Long saveTopic(@RequestBody Topic topic) 
 	{
 		System.out.println(topic.toString());
@@ -44,7 +44,7 @@ public class CrudController {
 		System.out.println("Hrishi here");
 		return topic.getTopicId();
 	}
-	@RequestMapping(method = RequestMethod.POST,value = "subtopic/new")
+	@RequestMapping(method = RequestMethod.POST,value = "/subtopic/new")
 	public Long saveSubTopic(@RequestBody SubTopic subTopic) 
 	{
 		System.out.println(subTopic.toString());
@@ -52,7 +52,7 @@ public class CrudController {
 		System.out.println("Hrishi here");
 		return subTopic.getSubTopicId();
 	}
-	@RequestMapping(method = RequestMethod.POST,value = "tag/new")
+	@RequestMapping(method = RequestMethod.POST,value = "/tag/new")
 	public Long saveTag(@RequestBody Tag tag) 
 	{
 		System.out.println(tag.toString());
@@ -60,7 +60,7 @@ public class CrudController {
 		System.out.println("Hrishi here");
 		return tag.getTagId();
 	}
-	@RequestMapping(method = RequestMethod.GET,value = "company/{id}")
+	@RequestMapping(method = RequestMethod.GET,value = "/company/{id}")
 	public Company getCompany(@PathVariable(name="id") long id) 
 	{
 		try{return companyRepo.findById(id).orElseThrow();}
@@ -69,7 +69,7 @@ public class CrudController {
 			return new Company();
 		}
 	}
-	@RequestMapping(method = RequestMethod.GET,value = "topic/{id}")
+	@RequestMapping(method = RequestMethod.GET,value = "/topic/{id}")
 	public Topic getTopic(@PathVariable(name="id") long id) 
 	{
 		try{return topicRepo.findById(id).orElseThrow();}
@@ -78,7 +78,7 @@ public class CrudController {
 			return new Topic();
 		}
 	}
-	@RequestMapping(method = RequestMethod.GET,value = "subtopic/{id}")
+	@RequestMapping(method = RequestMethod.GET,value = "/subtopic/{id}")
 	public SubTopic getSubTopic(@PathVariable(name="id") long id) 
 	{
 		try{return subTopicRepo.findById(id).orElseThrow();}
@@ -87,7 +87,7 @@ public class CrudController {
 			return new SubTopic();
 		}
 	}
-	@RequestMapping(method = RequestMethod.GET,value = "tag/{id}")
+	@RequestMapping(method = RequestMethod.GET,value = "/tag/{id}")
 	public Tag getTag(@PathVariable(name="id") long id) 
 	{
 		try{return tagRepo.findById(id).orElseThrow();}
@@ -96,7 +96,7 @@ public class CrudController {
 			return new Tag();
 		}
 	}
-	@RequestMapping(method = RequestMethod.PUT,value = "company/{id}")
+	@RequestMapping(method = RequestMethod.PUT,value = "/company/{id}")
 	public Company updateCompany(@RequestBody com.appland.quiz.models.Company company,@PathVariable(name="id") long id) 
 	{
 		try{
@@ -110,7 +110,7 @@ public class CrudController {
 			return new Company();
 		}
 	}
-	@RequestMapping(method = RequestMethod.PUT,value = "topic/{id}")
+	@RequestMapping(method = RequestMethod.PUT,value = "/topic/{id}")
 	public Topic updateTopic(@RequestBody Topic topic,@PathVariable(name="id") long id) 
 	{
 		try{
@@ -124,7 +124,7 @@ public class CrudController {
 			return new Topic();
 		}
 	}
-	@RequestMapping(method = RequestMethod.PUT,value = "subtopic/{id}")
+	@RequestMapping(method = RequestMethod.PUT,value = "/subtopic/{id}")
 	public SubTopic updateSubTopic(@RequestBody SubTopic subTopic,@PathVariable(name="id") long id) 
 	{
 		try{
@@ -138,7 +138,7 @@ public class CrudController {
 			return new SubTopic();
 		}
 	}
-	@RequestMapping(method = RequestMethod.PUT,value = "tag/{id}")
+	@RequestMapping(method = RequestMethod.PUT,value = "/tag/{id}")
 	public Tag updateTag(@RequestBody Tag tag,@PathVariable(name="id") long id) 
 	{
 		try{
@@ -152,22 +152,22 @@ public class CrudController {
 			return new Tag();
 		}
 	}
-	@RequestMapping(method = RequestMethod.DELETE,value = "company/{id}")
+	@RequestMapping(method = RequestMethod.DELETE,value = "/company/{id}")
 	public void deleteCompany(@PathVariable(name="id") long id) 
 	{
 		companyRepo.deleteById(id);
 	}
-	@RequestMapping(method = RequestMethod.DELETE,value = "topic/{id}")
+	@RequestMapping(method = RequestMethod.DELETE,value = "/topic/{id}")
 	public void deleteTopic(@PathVariable(name="id") long id) 
 	{
 		topicRepo.deleteById(id);
 	}
-	@RequestMapping(method = RequestMethod.DELETE,value = "subtopic/{id}")
+	@RequestMapping(method = RequestMethod.DELETE,value = "/subtopic/{id}")
 	public void deleteSubTopic(@PathVariable(name="id") long id) 
 	{
 		subTopicRepo.deleteById(id);
 	}
-	@RequestMapping(method = RequestMethod.DELETE,value = "tag/{id}")
+	@RequestMapping(method = RequestMethod.DELETE,value = "/tag/{id}")
 	public void deleteTag(@PathVariable(name="id") long id) 
 	{
 		tagRepo.deleteById(id);

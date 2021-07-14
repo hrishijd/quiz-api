@@ -1,5 +1,8 @@
 package com.appland.quiz.models;
 
+import java.util.List;
+
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,5 +25,6 @@ public class Company {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long companyId;
 	private String name;
-	private long questionId;
+	@ElementCollection(targetClass = Long.class)
+	private List<Long> questionIdList;
 }
