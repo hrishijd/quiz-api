@@ -1,5 +1,8 @@
 package com.appland.quiz.models;
 
+import java.util.List;
+
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,5 +22,8 @@ public class UserPerson {
 	private long userId;
 	private String name;
 	private String email;
-	private long questionId;
+	@ElementCollection(targetClass = Long.class)
+	private List<Long> questionIdList;
+	@ElementCollection(targetClass = Long.class)
+	private List<Long> answerIdList;
 }

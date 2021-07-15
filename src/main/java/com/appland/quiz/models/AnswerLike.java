@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class AnswerLike {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long likeId;
+	private long answerLikeId;
 	private long userId;
 	private long answerId;
 }

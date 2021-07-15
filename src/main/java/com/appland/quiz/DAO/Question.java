@@ -20,7 +20,7 @@ public class Question {
 	private String text;
 	private long companyId;
 	private long subTopicId;
-	@ElementCollection(targetClass = String.class)
-	private List<String> tagId;
+	@ElementCollection(targetClass = Long.class)
+	private List<Long> tagIdList;
 	private long userId;
 }
