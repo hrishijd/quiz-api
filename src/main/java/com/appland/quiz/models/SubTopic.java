@@ -23,7 +23,7 @@ public class SubTopic {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long subTopicId;
-	private String Name;
+	private String name;
 	private long topicId;
 	@ElementCollection(targetClass = Long.class)
 	private List<Long> questionIdList;
