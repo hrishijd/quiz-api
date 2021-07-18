@@ -44,7 +44,7 @@ public class PostController {
 		  long qlid=qs.saveQuestionLike(ql);
 		  return qlid;
 	  }
-	  @RequestMapping(method = RequestMethod.POST,value ="/post/questionlike") 
+	  @RequestMapping(method = RequestMethod.POST,value ="/post/answerlike") 
 	  public long postAnswerLike(@RequestBody  AnswerLike al) 
 	  {
 		  long alid=qs.saveAnswerLike(al);

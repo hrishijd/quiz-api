@@ -26,5 +26,5 @@ public class Tag {
 	private long tagId;
 	private String name;
 	@ElementCollection(targetClass = Long.class)
-	private List<Long> questionIdlist;
+	private List<Long> questionIdList;
 }

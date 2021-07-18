@@ -7,13 +7,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
-public class FilterForQuestions {
-	List<Long> companyIdList;
-	List<Long> subTopicIdList;
-	long questionLikes;
-	List<Long> tagIdList;
+public class AnswerDetail {
+	private String text;
+	private long userId;
+	private long likes;
+	private List<CommentDetail> commentList;
 }
 

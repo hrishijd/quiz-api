@@ -67,9 +67,9 @@ public class PostService {
 			for(Long s:l)
 			{
 				Tag t=tr.findById(s).orElseThrow();
-				List<Long> list=t.getQuestionIdlist();
+				List<Long> list=t.getQuestionIdList();
 				l.add(qid);
-				t.setQuestionIdlist(list);
+				t.setQuestionIdList(list);
 				tr.save(t);
 		
 			}
